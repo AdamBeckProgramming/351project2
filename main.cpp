@@ -38,16 +38,16 @@ int main()
 
 	//Prompt user for the input file
 	std::cout << "Enter the input file name (including file extension): ";
-	std::cin >> fileName;
+	std::getline(std::cin, fileName);
 
 	//Begin reading the input file
 	input.open(fileName, std::ifstream::in);
 
 	//Grab first char to determine how many processes
-	char c = input.get();
-	std::cout << c << endl;
+	int b;
+	input >> b;
 	int counter = 0;
-	processArray = new Process[int(c)];
+	processArray = new Process[b];
 
 	while(!input.eof())
 	{
