@@ -7,7 +7,7 @@ do
 			"Input queue ____"
 	
 	//process completes
-	if process.completeTime + process.waitTime == global time
+	if process.completeTime + process.startTime == global time
 		remove process from memory
 		process.complete = true
 		process.turnAroundTime = process.completeTime - process.arrivalTime
