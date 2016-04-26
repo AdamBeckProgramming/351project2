@@ -10,7 +10,7 @@ do
 	if process.completeTime + process.startTime == global time
 		remove process from memory
 		process.complete = true
-		process.turnAroundTime = process.completeTime - process.arrivalTime
+		process.turnAroundTime = (process.completionTime + process.waitTime) - process.arrivalTime
 		completeCounter++
 
 	//process arrives
