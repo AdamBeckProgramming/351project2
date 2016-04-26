@@ -25,7 +25,7 @@ int main()
 	Process* processArray;
 	int memPiece = 0;
 	int time = 0;
-	int frameSize;
+	int frameCnt;
 	int totalTurnAroundTime = 0;
 	float averageTurnAroundTime = 0.;
 	int completeCounter = 0;
@@ -48,8 +48,8 @@ int main()
 	}
 
 	// Create the simulated memory array[memSize/pageSize]
-	frameSize = memSize / pageSize;
-	Process memory[frameSize];
+	frameCnt = memSize / pageSize;
+	Process memory[frameCnt];
 
 	//Prompt user for the input file
 	std::cin.ignore();
