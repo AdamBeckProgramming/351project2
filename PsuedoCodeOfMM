@@ -1,0 +1,34 @@
+do
+	//check stating time
+	for i = 0 to #ofProcesses - 1
+		if starting time == global time
+			"Process __ arrived"
+			enqueue process
+			"Input queue ____"
+	
+	//process completes
+	if process.completeTime + process.waitTime == global time
+		remove process from memory
+		process.complete = true
+		process.turnAroundTime = process.completeTime - process.arrivalTime
+		completeCounter++
+
+	//process arrives
+	if proccesses are in queue
+		for i = 0 to #ofProcess in queue - 1
+			if there is enough space for the entire process
+				map to memory
+				print out memory map
+			else
+				make process wait (process.waitTime++)
+
+	//full completion
+	if(completeCounter == #ofProcesses)
+		chainComplete = true
+		//calculate the average turnaround time
+		for i = 0 to #ofProcesses - 1
+			totalTurnAround += process.turnAroundTime
+		averageTurnAroundTime = totalTurnAround / #ofProcesses
+		print out averageTurnAroundTime
+
+while(chainComplete = false)
