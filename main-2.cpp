@@ -22,7 +22,7 @@ int main()
 {
 	long memSize = 0;
 	long pageSize = 0;
-	Process* processArray;
+	Process* processArray, memory;
 	int memPiece = 0;
 	int time = 0;
 	int frameCnt;
@@ -49,7 +49,7 @@ int main()
 
 	// Create the simulated memory array[memSize/pageSize]
 	frameCnt = memSize / pageSize;
-	Process memory[frameCnt];
+	memory = new Process[frameCnt];
 
 	//Prompt user for the input file
 	std::cin.ignore();
