@@ -106,6 +106,7 @@ int main()
 				memory[i].turnAroundTime = (memory[i].completionTime + memory[i].waitTime) - memory[i].arrivalTime;
 				totalTurnAroundTime += memory[i].turnAroundTime;
 				completeCounter++;
+				//NEED TO REMOVE THE PROCESS FROM MEMORY
 			}
 			// Process in queue
 			if(!processQueue.empty())
