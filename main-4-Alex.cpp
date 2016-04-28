@@ -12,7 +12,7 @@ struct Process
 	int arrivalTime;
 	int completionTime;
 	int turnAroundTime;
-  int framesRequired;
+        int framesRequired;
 	int waitTime;
 	int numPieces;
 	int totalAddressSpace;
@@ -95,7 +95,7 @@ int main()
 	do
 	{
 		// Place process on the queue
-		for(int i = 0; i < b; i++)
+		for(int i = 0; i < numOfProcesses; i++)
 			if(processArray[i].arrivalTime == time)
 			{
 				std::cout << "Process " << i+1 << " has arrived at time " << time << std::endl;
@@ -131,18 +131,15 @@ int main()
 							memory[j].filled = true;
 							frame--;
 						}
-						else
-							break;
 					}
+					std::cout << "Memory Map:\n";
 					// Print out memory map
 					for(int j = 0; j < frameCnt; j++)
 					{
 						if(memory[j].filled == true)
-						{
-						}
+							std::cout << pageSize*j << "-" << pageSize*(j+1) << ": Process " << memory[j].id << std::endl;
 						else
-						{
-						}
+							std::cout << pageSize*j << "-" << pageSize*(j+1) << ": Free Frame\n";
 					}
 				}
 				else
